@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <body>
+    <div id="root"></div>
+    </body>
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.26.0/babel.min.js"></script>
+    <script type="text/babel">
+    const root = document.getElementById("root");
+    function App () {
+        const [counter, setCounter]= React.useState(0); // useState를 사용하여 counter를 0으로 초기화
+        const onClick =()=>{ // 클릭시 counter를 1씩 증가 실행
+            // setCounter(counter + 1);
+            setCounter( (current) => current + 1); //위의 것보다 더 안전하게 함수 사용 가능( 정확한 현제 state)
+        };
+        // console.log("render", counter);
+        return (
+            <div>
+                <h3>Total clicks: {counter}</h3>
+                <button onClick={onClick}>click me</button>
+            </div>
+        );
+    }
+    ReactDOM.render(<App/>, root);
+    </script>
+</html>
