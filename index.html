@@ -65,7 +65,7 @@
             return (
                 <div>
                     <div>
-                        <label htmlFor="km">Km</label>
+                        <label htmlFor="km">Km : </label>
                         <input
                             value={inverted ? amount * 1.6 : amount} // 삼항연산자를 사용하여 flipped가 true일때 amount * 60, false일때 amount
                             id="km"
@@ -76,7 +76,7 @@
                         ></input>
                     </div>
                     <div>
-                        <label htmlFor="miles">Miles</label>
+                        <label htmlFor="miles">Miles : </label>
                         <input
                             value={inverted ? amount : amount / 1.6} // 삼항연산자를 사용하여 flipped가 true일때 amount, false일때 amount / 60
                             id="miles"
@@ -108,7 +108,7 @@
                     <option value="1">Km & Miles</option>
                 </select>
                 <hr />
-                {index === "xx" ? <h1>Please select your units</h1> : null}
+                {index === "xx" ? <h3>Please select your units</h3> : null}
                 {index === "0" ? <MinutesToHours/> : null}
                 {index === "1" ? <KmToMiles/> : null}
             </div>
@@ -116,6 +116,6 @@
         }
 
         const root = document.getElementById("root");
-    ReactDOM.render(<App/>, root);
+        ReactDOM.render(<App/>, root);
     </script>
 </html>
